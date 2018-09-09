@@ -273,7 +273,7 @@ from a host shell execute:
 
 	tar xvzf bpshparis.demo0.tar.gz -O | docker load
 
-Then repeat steps from [Create demo0 container and connect to it] (#create-demo0-container-and- connect-to-it) to create a container.
+Then repeat steps from [Create demo0 container and connect to it] (#create-demo0-container-and-connect-to-it) to create a container.
 
 
 
