@@ -271,7 +271,7 @@ from a host shell execute:
 
 > To restore your image in another environment execute:
 
-	tar xvzf bpshparis.demo0.tar.gz -O | docker load
+	docker load < bpshparis.demo0.tar.gz
 
 Then repeat steps from [Create demo0 container and connect to it](#create-demo0-container-and-connect-to-it) to create a container.
 
