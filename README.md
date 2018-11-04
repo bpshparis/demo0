@@ -102,7 +102,11 @@ and hit enter.
 
 #### Build credential string to  use Speech to Text service and store it in CRED environment variable
 	CRED=$(ic service key-show ${S2T_SVC} user0 | awk 'NR >= 4 {print}' | jq -r '.username + ":" + .password')
+	
+or	
 
+	CRED=$(ic service key-show ${S2T_SVC} user0 | awk 'NR >= 4 {print}' | jq -r '"apikey:" + .apikey')
+	
 #### Store a sound file path in SOUND environment variable
 
 > To copy a sound file in demo0 container,
