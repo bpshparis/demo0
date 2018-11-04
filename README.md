@@ -101,7 +101,7 @@ and hit enter.
 	URL=$(ic service key-show ${S2T_SVC} ${SVC_KEY} | awk 'NR >= 4 {print}' | jq -r '.url + "/v1/recognize"')
 
 #### Build credential string to  use Speech to Text service and store it in CRED environment variable
-	CRED=$(ic service key-show s2t0 user0 | awk 'NR >= 4 {print}' | jq -r '.username + ":" + .password')
+	CRED=$(ic service key-show ${S2T_SVC} user0 | awk 'NR >= 4 {print}' | jq -r '.username + ":" + .password')
 
 #### Store a sound file path in SOUND environment variable
 
