@@ -31,6 +31,9 @@ avconv -i 2.mp3 -ar 22050 5.mp3
 	
 #### Install ibmcloud tool, jq, curl, moreutils...
 	apt-get update
+	apt-get -y install locales locales-all
+	sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+	locale-gen
 	apt-get install -y curl jq moreutils
 	curl -fsSL https://clis.ng.bluemix.net/install/linux | sh	
 	
