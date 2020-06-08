@@ -28,19 +28,17 @@ avconv -i 2.mp3 -ar 22050 5.mp3
 	docker create --tty --interactive --name="demo0" debian:latest
 	docker start demo0
 	docker attach demo0
-	
-#### Install ibmcloud tool, jq, curl, moreutils...
 	apt-get update
 	apt-get -y install locales locales-all
 	sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 	locale-gen
-	# Set the locale
-	RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
-    	locale-gen
-	ENV LANG en_US.UTF-8  
-	ENV LANGUAGE en_US:en  
-	ENV LC_ALL en_US.UTF-8  
+	export LANG="en_US.UTF-8"  
+	export LANGUAGE="en_US:en"  
+	export LC_ALL="en_US.UTF-8"
+	
+#### Install ibmcloud tool, jq, curl, moreutils...
 	apt-get install -y curl jq moreutils
+	
 	curl -fsSL https://clis.ng.bluemix.net/install/linux | sh	
 	
 #### Add some aliases	
